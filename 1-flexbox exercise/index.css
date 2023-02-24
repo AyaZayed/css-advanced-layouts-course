@@ -5,7 +5,7 @@
   flex-wrap: wrap;
 }
 
-div > div {
+.wrapper > * {
   font-size: 5rem;
   text-align: center;
   color: white;
