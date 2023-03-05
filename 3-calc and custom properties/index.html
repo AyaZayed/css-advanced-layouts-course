@@ -4,14 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script
-      src="https://kit.fontawesome.com/b5e22384e4.js"
-      crossorigin="anonymous"></script>
+    <!-- google fonts -->
     <link
       href="https://fonts.googleapis.com/css?family=Nobile:400,500|Open+Sans&display=swap"
       rel="stylesheet" />
+    <!-- stylesheets -->
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/nav.css" rel="stylesheet" />
+    <link href="css/layout.css" rel="stylesheet" />
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/b5e22384e4.js"
+      crossorigin="anonymous"></script>
     <title>Layout Times: CSS layouts with calc and custom properties</title>
   </head>
 
@@ -20,25 +24,26 @@
       <div class="row">
         <a
           href="#main-menu"
-          class="menu-toggle"
           id="main-menu-toggle"
-          aria-label="open main menu"
-          ><span class="fa fa-bars" aria-hidden="true"></span
-        ></a>
+          class="menu-toggle"
+          aria-label="Open main menu">
+          <span class="sr-only">Open main menu</span>
+          <span class="fa fa-bars" aria-hidden="true"></span>
+        </a>
         <div class="logo">
           <h1><i class="fas fa-paint-brush"></i> LayOut Times</h1>
           <h2>Your Web Design Destination</h2>
         </div>
       </div>
-
-      <nav id="main-menu" class="main-menu">
+      <nav id="main-menu" class="main-menu" aria-label="Main menu">
         <a
           href="#main-menu-toggle"
+          id="main-menu-close"
           class="menu-close"
-          aria-label="close-main-menu"
-          ><span class="fa fa-close" aria-hidden="true"></span
-        ></a>
-        <input type="text" name="" id="" />
+          aria-label="Close main menu">
+          <span class="sr-only">Close main menu</span>
+          <span class="fa fa-close" aria-hidden="true"></span>
+        </a>
         <ul>
           <li><a href="#">CSS Resources</a></li>
           <li><a href="#">Design</a></li>
@@ -49,87 +54,85 @@
           <li><a href="#">Top Talent</a></li>
         </ul>
       </nav>
-      <a
-        href="#main-menu-toggle"
-        class="backdrop"
-        hidden
-        aria-hidden="true"></a>
+      <a href="#main-menu-toggle" class="backdrop" tabindex="-1" hidden></a>
     </header>
 
-    <main>
+    <main class="main-content">
       <section id="first">
         <h1>Jen’s Awesome Resources</h1>
-        <article>
-          <h2>Learn with Jen Kramer online at Harvard Extension</h2>
-          <p>
-            Join some of the many informative courses Jen teaches through the
-            Harvard Extension School. Courses count towards bachelors and
-            masters degree programs, certificates, or take a class for your own
-            enrichment.
-          </p>
-          <ul>
-            <li>
+        <div class="articles">
+          <article>
+            <h2>Learn with Jen Kramer online at Harvard Extension</h2>
+            <p>
+              Join some of the many informative courses Jen teaches through the
+              Harvard Extension School. Courses count towards bachelors and
+              masters degree programs, certificates, or take a class for your
+              own enrichment.
+            </p>
+            <ul>
+              <li>
+                <a
+                  href="https://www.extension.harvard.edu/course-catalog/courses?instructors=Kramer,%20Jennifer"
+                  target="_blank"
+                  >Jen's course list <i class="fas fa-paint-brush"></i
+                ></a>
+              </li>
+              <li>
+                <a href="http://extension.harvard.edu" target="_blank"
+                  >Harvard Extension website <i class="fas fa-paint-brush"></i
+                ></a>
+              </li>
+            </ul>
+          </article>
+          <article>
+            <img src="img/book.png" alt="Before You Code book cover." />
+            <h2>Plan your product’s success</h2>
+            <p>
+              By taking the time to do upfront validation, planning and
+              iterating before you build, you can avoid ideas that flop and
+              create a product that exceeds expectations. Heather O'Neill and
+              Jen Kramer's latest book, <cite>Before You Code</cite>, will guide
+              you through the process.
+            </p>
+            <p>
+              <a href="http://beforeyoucode.guide" target="_blank"
+                >Visit the <cite>Before You Code</cite> website
+                <i class="fas fa-paint-brush"></i
+              ></a>
+            </p>
+          </article>
+          <article>
+            <h2>More Responsive Design 2.0</h2>
+            <p>
+              Get a head start on the latest responsive web design (RWD)
+              techniques with this great list of resources.
+            </p>
+            <p>
               <a
-                href="https://www.extension.harvard.edu/course-catalog/courses?instructors=Kramer,%20Jennifer"
+                href="https://codepen.io/jen4web/post/rwd20readinglist"
                 target="_blank"
-                >Jen's course list <i class="fas fa-paint-brush"></i
+                >Visit RWD 2.0 Reading List <i class="fas fa-paint-brush"></i
               ></a>
-            </li>
-            <li>
-              <a href="http://extension.harvard.edu" target="_blank"
-                >Harvard Extension website <i class="fas fa-paint-brush"></i
+            </p>
+          </article>
+          <article>
+            <img src="img/cssworkout.png" alt="CSS Workout" />
+            <h2>Have you done your CSS workout for the day?</h2>
+            <p>
+              Nowhere is practice more important than with CSS layouts. For 15
+              years, we’ve listened to students complain about CSS layouts, how
+              hard they are to understand, and how things “don’t work” in the
+              expected way. Now you can train daily to master them.
+            </p>
+            
+            <p>
+              <a href="http://www.cssworkout.guide" target="_blank"
+                >Visit <cite>CSS Workouts</cite> to start your routine!
+                <i class="fas fa-paint-brush"></i
               ></a>
-            </li>
-          </ul>
-        </article>
-        <article>
-          <img src="img/book.png" alt="Before You Code book cover." />
-          <h2>Plan your product’s success</h2>
-          <p>
-            By taking the time to do upfront validation, planning and iterating
-            before you build, you can avoid ideas that flop and create a product
-            that exceeds expectations. Heather O'Neill and Jen Kramer's latest
-            book, <cite>Before You Code</cite>, will guide you through the
-            process.
-          </p>
-          <p>
-            <a href="http://beforeyoucode.guide" target="_blank"
-              >Visit the <cite>Before You Code</cite> website
-              <i class="fas fa-paint-brush"></i
-            ></a>
-          </p>
-        </article>
-        <article>
-          <h2>More Responsive Design 2.0</h2>
-          <p>
-            Get a head start on the latest responsive web design (RWD)
-            techniques with this great list of resources.
-          </p>
-          <p>
-            <a
-              href="https://codepen.io/jen4web/post/rwd20readinglist"
-              target="_blank"
-              >Visit RWD 2.0 Reading List <i class="fas fa-paint-brush"></i
-            ></a>
-          </p>
-        </article>
-        <article>
-          <img src="img/cssworkout.png" alt="CSS Workout" />
-          <h2>Have you done your CSS workout for the day?</h2>
-          <p>
-            Nowhere is practice more important than with CSS layouts. For 15
-            years, we’ve listened to students complain about CSS layouts, how
-            hard they are to understand, and how things “don’t work” in the
-            expected way. Now you can train daily to master them.
-          </p>
-          
-          <p>
-            <a href="http://www.cssworkout.guide" target="_blank"
-              >Visit <cite>CSS Workouts</cite> to start your routine!
-              <i class="fas fa-paint-brush"></i
-            ></a>
-          </p>
-        </article>
+            </p>
+          </article>
+        </div>
       </section>
       <section id="main">
         <h1>Main News</h1>
