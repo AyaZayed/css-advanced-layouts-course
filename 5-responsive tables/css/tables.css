@@ -1,0 +1,171 @@
+/* round of applause to Chris Coyer: https://css-tricks.com/responsive-data-tables/
+and Adrian Roselli: http://adrianroselli.com/2017/11/a-responsive-accessible-table.html#Responsive
+*/
+#table article,
+#table aside {
+    --width: 16;
+}
+
+table,
+thead,
+tbody,
+tr,
+td {
+    display: block;
+}
+
+.table-scroll {
+    overflow-x: auto;
+}
+
+caption {
+    display: block;
+    font-size: larger;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+th {
+    display: none;
+    border-top: 1px solid #000;
+}
+
+table td,
+table th,
+caption {
+    padding: .5rem;
+    text-align: left;
+}
+
+td {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/* basic table styling */
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+tr:nth-child(odd) {
+    background-color: #f6dcd4;
+}
+
+td:nth-of-type(n)::before {
+    flex-basis: 50%;
+    font-weight: bold;
+}
+
+/* generic page styling */
+aside ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+aside li {
+    margin-bottom: 1rem;
+}
+
+td:nth-of-type(1)::before {
+    content: 'Planet Name: ';
+}
+
+td:nth-of-type(2)::before {
+    content: 'Mass(10^24kg): ';
+}
+
+
+td:nth-of-type(3)::before {
+    content: 'Diameter(km): ';
+}
+
+td:nth-of-type(4)::before {
+    content: 'Rotation Period(hours): ';
+}
+
+td:nth-of-type(5)::before {
+    content: 'Length of Day(hours): ';
+}
+
+td:nth-of-type(6)::before {
+    content: 'Distance from Sun(10^6km): ';
+}
+
+td:nth-of-type(7)::before {
+    content: 'Orbital Period(days): ';
+}
+
+td:nth-of-type(8)::before {
+    content: 'Mean Temp(C): ';
+}
+
+td:nth-of-type(9)::before {
+    content: 'Number of Moons: ';
+}
+
+td:nth-of-type(10)::before {
+    content: 'Ring System? ';
+}
+
+td:nth-of-type(11)::before {
+    content: 'Global Magnetic Field? ';
+}
+
+@media (min-width:740px) {
+    #table {
+        --columns: 16;
+    }
+
+    #table article {
+        --width: 10;
+        --gap-constant: .2%;
+    }
+
+    #table aside {
+        --width: 6;
+        --gap-constant: .2%;
+    }
+}
+
+@media (min-width:950px) {
+    #table article {
+        --width: 16;
+    }
+
+    #table aside {
+        --width: 16;
+    }
+
+    table {
+        display: table;
+    }
+
+    thead tr {
+        position: static;
+    }
+
+    thead tr th {
+        background-color: #fff;
+    }
+
+    thead,
+    tbody {
+        display: table-row-group;
+    }
+
+    tr {
+        display: table-row;
+    }
+
+    th,
+    td {
+        display: table-cell;
+        text-align: left;
+    }
+
+    td:nth-of-type(n)::before {
+        content: '';
+    }
+}
